@@ -1,0 +1,55 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "pnpm --filter api run build && pnpm --filter frontend run build",
+  "outputDirectory": "apps/frontend/dist",
+  "rewrites": [
+    {
+      "source": "/analytics/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/analytics",
+      "destination": "/api"
+    },
+    {
+      "source": "/auth/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/auth",
+      "destination": "/api"
+    },
+    {
+      "source": "/clubs/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/billing/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/marketplace/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/social/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/notifications/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/docs",
+      "destination": "/api"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
